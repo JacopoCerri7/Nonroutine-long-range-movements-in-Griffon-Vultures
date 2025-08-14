@@ -56,7 +56,7 @@ The dataset "eHRm_20250807.Rdata", containing information about single extra-hom
 
 The file "FittedHRs_20250814.zip" contains all the home-ranges, estimated through continuous time movement models and AKDE/wKADE. Due to the size of each file, this folder is compressed. Single R files should be accessed from the unzipped file.
 
-The file "Sardinia_EPSG32632.shp" contains the shapefile of Sardinia, the study area. Please note that the .cpg, .dbf, .prj, .qmd, .shp and .shx files should remain the same folder.
+The file "Sardinia_EPSG32632.zip" contains the shapefile of Sardinia, the study area. Please note that the .cpg, .dbf, .prj, .qmd, .shp and .shx files should remain the same folder.
 
 #######################################################################
 # Codes
