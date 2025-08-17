@@ -1,12 +1,8 @@
-#######################################################################
 # Intro
-#######################################################################
 
 The following folder contains the reproducible data and software code for the study entitled "Weather conditions are systematically associated with nonroutine long-range movements in a large scavenger". The folder is divided in a series of datasets and software codes.
 
-#######################################################################
-# Datasets
-#######################################################################
+## Datasets
 
 The dataset "Dataset_GAMM_20250807.Rdata" contains the processed data, ready to be used in the final GAMM aimed to link weather conditions to the probability of short, medium and long-range movement. Rows (observational units) correspond to GPS fix, acquired by GPS tags. 
 The dataset contains the following columns:
@@ -58,9 +54,7 @@ The file "FittedHRs_20250814.zip" contains all the home-ranges, estimated throug
 
 The file "Sardinia_EPSG32632.zip" contains the shapefile of Sardinia, the study area. Please note that the .cpg, .dbf, .prj, .qmd, .shp and .shx files should remain the same folder.
 
-#######################################################################
-# Codes
-#######################################################################
+## Codes
 
 The folder also contains 5 main software codes for replicating the analyses in R (https://www.r-project.org/):
     - The file "Script_HomeRange_20250814.R" computes HR for each individual
@@ -69,14 +63,13 @@ The folder also contains 5 main software codes for replicating the analyses in R
     - The file "Script_GAMM_20250806.R" fits models to predict whether griffon vultures engages in short-range, medium-range or long-range movements, according to different environmental conditions.
     - The file "Script_GLMM_20250814.R" contains a code for model the effect of solar radiation of the duration of long-range extra-home range movements (LRMs).
     
-#Home range calculation
-#######################################################################
+### Home range calculation
+
 The script "Script_HomeRange_20250814.R" computes HR for each individual, through different movement models and AKDE/wAKDE in the ctmm package (https://ctmm-initiative.github.io/ctmm/). The script requires the GPS locations from "Dataset_GAMM_20250807.Rdata".
 
 Due to the time required to fit ctmms, fitted AKDE/wAKDEs are stored, in the form of objects of type "UD", in the zipped file "FittedHRs_20250814.zip". This has to be uncompressed and files uploaded in the scripts, whenever needed.
 
-#Calculation of extra-home range movement trajectories
-#######################################################################
+### Calculation of extra-home range movement trajectories
 
 The script "Script_ExtraHRMovements_20250814.R" computes extra-home range trajectories for each individual and for each trajectory calculates:
 their duration in hours, until when the animal came back in its home range
@@ -85,8 +78,7 @@ their duration in hours, until when the animal came back in its home range
 - the maximum distance, expressed in km from the border of the home range
 - their median step length, expressed in km
 
-#Identification of different types of extra home range movement trajectories through cluster analysis
-#######################################################################
+### Identification of different types of extra home range movement trajectories through cluster analysis
 
 The script "Script_ClusterAnalysis_20250814.R" carries out a Partitioning around Medoid (PAM) Cluster Analysis to distinguish between different types of extra-home range movement trajectories.Trajectories are clusterized according to
 - their duration in hours, until when the animal came back in its home range
@@ -102,8 +94,7 @@ The script requires two datasets:
 - "Dataset_GAMM_20250807.Rdata", containing the annotated GPS locations from tags. Each row in this dataset corresponds to a GPS location. This dataset is using to plot short, medium and long-range movements (Fig. 1 of the manuscript)
 
 
-#Modelingthe effect of weather on different types of movement
-#######################################################################
+### Modelingthe effect of weather on different types of movement
 
 The script "Script_GAMM_20250806.R" works with "Dataset_GAMM_20250807.Rdata" and fits Generalized Additive Models to predict whether griffon vultures engages in short-range, medium-range or long-range movements, according to different environmental conditions. Generalized Additive Mixed Models are fitted with the mgcv package in R.
 
@@ -139,8 +130,7 @@ The dataset contains the following columns:
 - sol.rad -> Solar radiation, expressed as the mean surface downward short-wave radiation flux, downloaded from ERA5 (https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview).
 - sol.rad.std <- Solar radiation, converted to a Z-score
 
-#Assessing the effect of solar radiation over the duration of long-range movements
-#######################################################################
+### Assessing the effect of solar radiation over the duration of long-range movements
 
 The file "Script_GLMM_20250814.R" contains a code for model the effect of solar radiation of the duration of long-range extra-home range movements (LRMs).
 
